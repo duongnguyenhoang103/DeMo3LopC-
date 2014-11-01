@@ -1,0 +1,56 @@
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\bin\Debug\WindowsForms.exe
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\bin\Debug\WindowsForms.pdb
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.Properties.Resources.resources
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.exe
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.pdb
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\bin\Debug\WindowsForms.exe.config
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\bin\Debug\BusinessEntity.dll
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\bin\Debug\AccessData.dll
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\bin\Debug\BusinessEntity.pdb
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\bin\Debug\AccessData.pdb
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.frmLop.resources
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.frmMain.resources
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.frmSV.resources
+G:\DeMoQLSV1\WindowsForms\bin\Debug\WindowsForms.exe.config
+G:\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.exe
+G:\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.pdb
+G:\DeMoQLSV1\WindowsForms\bin\Debug\WindowsForms.exe
+G:\DeMoQLSV1\WindowsForms\bin\Debug\WindowsForms.pdb
+G:\DeMoQLSV1\WindowsForms\bin\Debug\BusinessEntity.dll
+G:\DeMoQLSV1\WindowsForms\bin\Debug\AccessData.dll
+G:\DeMoQLSV1\WindowsForms\bin\Debug\BusinessEntity.pdb
+G:\DeMoQLSV1\WindowsForms\bin\Debug\AccessData.pdb
+G:\DeMoQLSV1\WindowsForms\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.frmLop.resources
+G:\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.frmMain.resources
+G:\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.frmSV.resources
+G:\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.Properties.Resources.resources
+G:\DeMoQLSV1\WindowsForms\obj\x86\Debug\GenerateResource.read.1.tlog
+G:\DeMoQLSV1\WindowsForms\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.frmMonHoc.resources
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.frmLog.resources
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\GenerateResource-cvtres.read.1.tlog
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\GenerateResource-cvtres.write.1.tlog
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\bin\Debug\WindowsForms.exe.config
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.exe
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.pdb
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\bin\Debug\WindowsForms.exe
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\bin\Debug\WindowsForms.pdb
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\bin\Debug\BusinessEntity.dll
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\bin\Debug\AccessData.dll
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\bin\Debug\BusinessEntity.pdb
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\bin\Debug\AccessData.pdb
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.frmLog.resources
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.frmLop.resources
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.frmMain.resources
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.frmMonHoc.resources
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.frmSV.resources
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\WindowsForms.Properties.Resources.resources
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\GenerateResource-cvtres.read.1.tlog
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\GenerateResource-cvtres.write.1.tlog
+C:\Users\duong\Desktop\DeMoQLSV1\WindowsForms\obj\x86\Debug\GenerateResource.write.1.tlog

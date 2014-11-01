@@ -1,0 +1,15 @@
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\AccessData\bin\Debug\AccessData.dll
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\AccessData\bin\Debug\AccessData.pdb
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\AccessData\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\AccessData\obj\Debug\AccessData.dll
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\AccessData\obj\Debug\AccessData.pdb
+G:\DeMoQLSV1\AccessData\bin\Debug\AccessData.dll
+G:\DeMoQLSV1\AccessData\bin\Debug\AccessData.pdb
+G:\DeMoQLSV1\AccessData\obj\Debug\ResolveAssemblyReference.cache
+G:\DeMoQLSV1\AccessData\obj\Debug\AccessData.dll
+G:\DeMoQLSV1\AccessData\obj\Debug\AccessData.pdb
+C:\Users\duong\Desktop\DeMoQLSV1\AccessData\bin\Debug\AccessData.dll
+C:\Users\duong\Desktop\DeMoQLSV1\AccessData\bin\Debug\AccessData.pdb
+C:\Users\duong\Desktop\DeMoQLSV1\AccessData\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\duong\Desktop\DeMoQLSV1\AccessData\obj\Debug\AccessData.dll
+C:\Users\duong\Desktop\DeMoQLSV1\AccessData\obj\Debug\AccessData.pdb

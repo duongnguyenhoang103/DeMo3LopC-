@@ -1,0 +1,23 @@
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\BusinessEntity\bin\Debug\BusinessEntity.dll
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\BusinessEntity\bin\Debug\BusinessEntity.pdb
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\BusinessEntity\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\BusinessEntity\obj\Debug\BusinessEntity.dll
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\BusinessEntity\obj\Debug\BusinessEntity.pdb
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\BusinessEntity\bin\Debug\AccessData.dll
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\BusinessEntity\bin\Debug\AccessData.pdb
+G:\DeMoQLSV1\BusinessEntity\bin\Debug\BusinessEntity.dll
+G:\DeMoQLSV1\BusinessEntity\bin\Debug\BusinessEntity.pdb
+G:\DeMoQLSV1\BusinessEntity\bin\Debug\AccessData.dll
+G:\DeMoQLSV1\BusinessEntity\bin\Debug\AccessData.pdb
+G:\DeMoQLSV1\BusinessEntity\obj\Debug\ResolveAssemblyReference.cache
+G:\DeMoQLSV1\BusinessEntity\obj\Debug\BusinessEntity.dll
+G:\DeMoQLSV1\BusinessEntity\obj\Debug\BusinessEntity.pdb
+C:\Documents and Settings\AngelPaby\Desktop\DeMoQLSV1\BusinessEntity\bin\Debug\BusinessEntity.dll.config
+C:\Users\duong\Desktop\DeMoQLSV1\BusinessEntity\bin\Debug\BusinessEntity.dll.config
+C:\Users\duong\Desktop\DeMoQLSV1\BusinessEntity\bin\Debug\BusinessEntity.dll
+C:\Users\duong\Desktop\DeMoQLSV1\BusinessEntity\bin\Debug\BusinessEntity.pdb
+C:\Users\duong\Desktop\DeMoQLSV1\BusinessEntity\bin\Debug\AccessData.dll
+C:\Users\duong\Desktop\DeMoQLSV1\BusinessEntity\bin\Debug\AccessData.pdb
+C:\Users\duong\Desktop\DeMoQLSV1\BusinessEntity\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\duong\Desktop\DeMoQLSV1\BusinessEntity\obj\Debug\BusinessEntity.dll
+C:\Users\duong\Desktop\DeMoQLSV1\BusinessEntity\obj\Debug\BusinessEntity.pdb
