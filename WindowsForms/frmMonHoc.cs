@@ -97,8 +97,8 @@ namespace WindowsForms
         {
             try
             {
-               
-                mh.InsertMH(this.txtMH.Text, txTenMH.Text, cbMaGV.SelectedValue.ToString());
+
+                //mh.InsertMH(txtMaMH.Text, txtMonHoc.Text, Int32.Parse(txtSoTC.Text), Int32.Parse(txtSoTiet.Text), cbMaGV.SelectedValue.ToString());
                 MessageBox.Show(" ban da them mon hoc " + txTenMH.Text + " voi ma " + txtMH.Text + "!!! Thanh cong");
                 frmMonHoc_Load(sender, e);
                
@@ -122,7 +122,7 @@ namespace WindowsForms
                 {
                     int r = dgvMH.CurrentCell.RowIndex;
                     string strmadk = dgvMH.Rows[r].Cells[0].Value.ToString();
-                    mh.Update(strmadk, this.txtMH.Text, txTenMH.Text, cbMaGV.SelectedValue.ToString());
+                  //  mh.Update(strmadk, this.txtMH.Text, txTenMH.Text, cbMaGV.SelectedValue.ToString());
                     MessageBox.Show(" ban da sua Thanh cong");
                    // frmMonHoc_Load(sender, e);
                     loadDgvMH();

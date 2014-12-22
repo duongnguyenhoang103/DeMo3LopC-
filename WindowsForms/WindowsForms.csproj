@@ -35,8 +35,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>E:\Bai tap chuyen nghanh\Cai Dat_SQL_VB2008\cai dat SQL &amp; VB\SetUp_dotnetBar\DevComponents_DotNetBar_2008_8_0_0_0\Patch\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +52,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeMoQLSVDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeMoQLSVDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDangN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangN.Designer.cs">
+      <DependentUpon>frmDangN.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +101,66 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC_BaoCaoDiemSV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_BaoCaoDiemSV.Designer.cs">
+      <DependentUpon>UC_BaoCaoDiemSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_BCThongKeSV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_BCThongKeSV.Designer.cs">
+      <DependentUpon>UC_BCThongKeSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Diem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Diem.Designer.cs">
+      <DependentUpon>UC_Diem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_GiangVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_GiangVien.Designer.cs">
+      <DependentUpon>UC_GiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Khoa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Khoa.Designer.cs">
+      <DependentUpon>UC_Khoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Lop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Lop.Designer.cs">
+      <DependentUpon>UC_Lop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_MonHoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_MonHoc.Designer.cs">
+      <DependentUpon>UC_MonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Nghanh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Nghanh.Designer.cs">
+      <DependentUpon>UC_Nghanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_SinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_SinhVien.Designer.cs">
+      <DependentUpon>UC_SinhVien.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDangN.resx">
+      <DependentUpon>frmDangN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLog.resx">
       <DependentUpon>frmLog.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,7 +186,49 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportDSSV.rdlc" />
+    <EmbeddedResource Include="UC_BaoCaoDiemSV.resx">
+      <DependentUpon>UC_BaoCaoDiemSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_BCThongKeSV.resx">
+      <DependentUpon>UC_BCThongKeSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Diem.resx">
+      <DependentUpon>UC_Diem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_GiangVien.resx">
+      <DependentUpon>UC_GiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Khoa.resx">
+      <DependentUpon>UC_Khoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Lop.resx">
+      <DependentUpon>UC_Lop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_MonHoc.resx">
+      <DependentUpon>UC_MonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Nghanh.resx">
+      <DependentUpon>UC_Nghanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_SinhVien.resx">
+      <DependentUpon>UC_SinhVien.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="DeMoQLSVDataSet.xsc">
+      <DependentUpon>DeMoQLSVDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DeMoQLSVDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DeMoQLSVDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DeMoQLSVDataSet.xss">
+      <DependentUpon>DeMoQLSVDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="image\banner1.psd" />
+    <None Include="image\main.psd" />
+    <None Include="image\Thumbs.db" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -120,6 +244,162 @@
       <Project>{BB93F9BF-E4CC-44B4-9F5D-790CD579E530}</Project>
       <Name>BusinessEntity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="image\001_02.png" />
+    <Content Include="image\1343142216_add-notes.png" />
+    <Content Include="image\32px-Crystal_Clear_action_stop.png" />
+    <Content Include="image\32px-Crystal_Clear_app_aim2.png" />
+    <Content Include="image\32px-Crystal_Clear_app_cervisia.png" />
+    <Content Include="image\32px-Crystal_Clear_app_kfm_home.png" />
+    <Content Include="image\32px-Crystal_Clear_app_khelpcenter.png" />
+    <Content Include="image\32px-Crystal_Clear_app_kservices.png" />
+    <Content Include="image\32px-Crystal_Clear_app_kwrite.png" />
+    <Content Include="image\32px-Crystal_Clear_app_package_settings.png" />
+    <Content Include="image\32px-Crystal_Clear_app_package_utilities.png" />
+    <Content Include="image\32px-Quick_restart.png" />
+    <Content Include="image\45.png" />
+    <Content Include="image\add-event-icon.png" />
+    <Content Include="image\Add.png" />
+    <Content Include="image\Add1.png" />
+    <Content Include="image\add_16.png" />
+    <Content Include="image\agt_family.png" />
+    <Content Include="image\Back.png" />
+    <Content Include="image\baner.png" />
+    <Content Include="image\baner1.png" />
+    <Content Include="image\banerr.jpg" />
+    <Content Include="image\banerr_1.jpg" />
+    <Content Include="image\Bar Chart.png" />
+    <Content Include="image\bill.png" />
+    <Content Include="image\calculate.png" />
+    <Content Include="image\cancel.png" />
+    <Content Include="image\case-64x64.png" />
+    <Content Include="image\cau hoi.png" />
+    <Content Include="image\changePass.png" />
+    <Content Include="image\checkUser.png" />
+    <Content Include="image\chucvu.png" />
+    <Content Include="image\Comment.png" />
+    <Content Include="image\Customer-128x128.png" />
+    <Content Include="image\Customer.png" />
+    <Content Include="image\customerList.png" />
+    <Content Include="image\customerLogin.png" />
+    <Content Include="image\Customers.png" />
+    <Content Include="image\customers48.png" />
+    <Content Include="image\Customer_Icon.jpg" />
+    <Content Include="image\dangnhap.png" />
+    <Content Include="image\dangxuat.png" />
+    <Content Include="image\delete.png" />
+    <Content Include="image\desktop.jpg" />
+    <Content Include="image\distributor-report-icon.png" />
+    <Content Include="image\Do Kho.png" />
+    <Content Include="image\down.png" />
+    <Content Include="image\Drug-basket-64.png" />
+    <Content Include="image\duong.PNG" />
+    <Content Include="image\Edit-Document-icon.png" />
+    <Content Include="image\Edit.png" />
+    <Content Include="image\Exit1.png" />
+    <Content Include="image\Fast-backward-icon.png" />
+    <Content Include="image\Fast-forward-icon.png" />
+    <Content Include="image\File.png" />
+    <Content Include="image\Filter.png" />
+    <Content Include="image\first-aid-48x48.png" />
+    <Content Include="image\folder-orange-favourite-icon.png" />
+    <Content Include="image\Folder-Scheduled-Tasks-icon.png" />
+    <Content Include="image\forget-48.png" />
+    <Content Include="image\forget.png" />
+    <Content Include="image\foto_album.png" />
+    <Content Include="image\gaimphone2456.png" />
+    <Content Include="image\giangsinh.jpg" />
+    <Content Include="image\graduated-icon %281%29.png" />
+    <Content Include="image\graduated-icon.png" />
+    <Content Include="image\Help-Support-icon.png" />
+    <Content Include="image\Home.png" />
+    <Content Include="image\home1.png" />
+    <Content Include="image\HospitalRed2-64.png" />
+    <Content Include="image\icon.png" />
+    <Content Include="image\icon_book_1.png" />
+    <Content Include="image\icon_information.gif" />
+    <Content Include="image\images9.png" />
+    <Content Include="image\Info.png" />
+    <Content Include="image\inputstudent.png" />
+    <Content Include="image\Ky Thi.png" />
+    <Content Include="image\KyThiCauHoi.png" />
+    <Content Include="image\ListMenuPatient1.png" />
+    <Content Include="image\Login-48.png" />
+    <Content Include="image\login.png" />
+    <Content Include="image\login_icon.png" />
+    <Content Include="image\login_iconSmall.jpg" />
+    <Content Include="image\login_iconSmall.png" />
+    <Content Include="image\Logoff.png" />
+    <Content Include="image\logout.png" />
+    <Content Include="image\logoutSystem.gif" />
+    <Content Include="image\main.png" />
+    <Content Include="image\manager.png" />
+    <Content Include="image\Measure.png" />
+    <Content Include="image\MeasureList.png" />
+    <Content Include="image\medical_case-Type.png" />
+    <Content Include="image\medical_icon.jpg" />
+    <Content Include="image\nen.jpg" />
+    <Content Include="image\new.png" />
+    <Content Include="image\nhatky.png" />
+    <Content Include="image\outlook7.png" />
+    <Content Include="image\Package-Accept-icon %281%29.png" />
+    <Content Include="image\Package-Accept-icon.png" />
+    <Content Include="image\people.ico" />
+    <Content Include="image\pills-2-128x128.png" />
+    <Content Include="image\pills-2-32x32.png" />
+    <Content Include="image\pills-4-64x64.png" />
+    <Content Include="image\Places-folder-system-icon.png" />
+    <Content Include="image\Products.png" />
+    <Content Include="image\Profile.png" />
+    <Content Include="image\publications-icon.png" />
+    <Content Include="image\Purchase.png" />
+    <Content Include="image\Refresh.ico-32x32.png" />
+    <Content Include="image\register.png" />
+    <Content Include="image\reload.png" />
+    <Content Include="image\reload_24.png" />
+    <Content Include="image\reload_32.png" />
+    <Content Include="image\Remove.png" />
+    <Content Include="image\reset.png" />
+    <Content Include="image\sach.jpg" />
+    <Content Include="image\save.png" />
+    <Content Include="image\Save1.png" />
+    <Content Include="image\scr_medical-icon-presentation-1_0.jpg" />
+    <Content Include="image\Search-icon.png" />
+    <Content Include="image\search2.png" />
+    <Content Include="image\search32.png" />
+    <Content Include="image\sign-up-icon %281%29.png" />
+    <Content Include="image\Skip-backward-icon.png" />
+    <Content Include="image\Skip-forward-icon %281%29.png" />
+    <Content Include="image\Skip-forward-icon.png" />
+    <Content Include="image\snake_cup-016.png" />
+    <Content Include="image\snake_cup-032.png" />
+    <Content Include="image\snake_cup-048.png" />
+    <Content Include="image\sodo.png" />
+    <Content Include="image\supplier-128.png" />
+    <Content Include="image\supplier-128x128.png" />
+    <Content Include="image\Supplier.png" />
+    <Content Include="image\supplier1.png" />
+    <Content Include="image\suspend.png" />
+    <Content Include="image\System-icon.png" />
+    <Content Include="image\system.png" />
+    <Content Include="image\system_log_out.png" />
+    <Content Include="image\system_users.png" />
+    <Content Include="image\Tasks-icon.png" />
+    <Content Include="image\Test Icon.jpg" />
+    <Content Include="image\toolCust.png" />
+    <Content Include="image\Trackdown.png" />
+    <Content Include="image\up.png" />
+    <Content Include="image\Update.png" />
+    <Content Include="image\User Accounts.png" />
+    <Content Include="image\User-32x32.png" />
+    <Content Include="image\User-48x48.png" />
+    <Content Include="image\user-group.png" />
+    <Content Include="image\user-groups.png" />
+    <Content Include="image\User-Groupss.png" />
+    <Content Include="image\userChangePassword.png" />
+    <Content Include="image\Users.png" />
+    <Content Include="image\vietnam_32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

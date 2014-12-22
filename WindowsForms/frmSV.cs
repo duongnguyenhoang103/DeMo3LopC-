@@ -25,9 +25,9 @@ namespace WindowsForms
         {
             //DataTable dt = new DataTable();
             //dt = sv.ShowSV();
-            //dgvSV.DataSource = dt;
+            //dgvSV.DataSource = dt;           
             dgvSV.DataSource = sv.GetAllSV();
-            lbTg.Text = "co tong so:" + dgvSV.RowCount.ToString()+ " sinh vien";
+            lbTg.Text = "có tổng số:" + dgvSV.RowCount.ToString()+ " sinh viên";
             lbTg.ForeColor = Color.Black;
             lbTg.Font = new Font(lbTg.Font,FontStyle.Bold);
         }
@@ -44,7 +44,7 @@ namespace WindowsForms
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            cbSearch.SelectedIndex = 0;
            // load colum Malop tren dgv
             //colMaLop.DataSource = lp.ShowLop();
             //colMaLop.DisplayMember = "TenLop";
@@ -66,8 +66,10 @@ namespace WindowsForms
                 txtTenSV.Text = dgvSV.Rows[dong].Cells[1].Value.ToString();
                 cbGioiTinh.Text = dgvSV.Rows[dong].Cells[2].Value.ToString();
                 txtSDT.Text = dgvSV.Rows[dong].Cells[3].Value.ToString();
-                dateTimePickerNgaySinh.Text = dgvSV.Rows[dong].Cells[4].Value.ToString();
-                cbMaLop.SelectedValue = dgvSV.Rows[dong].Cells[5].Value.ToString();
+                txtDiaChi.Text = dgvSV.Rows[dong].Cells[4].Value.ToString();
+                txtEmail.Text = dgvSV.Rows[dong].Cells[5].Value.ToString();
+                dateTimePickerNgaySinh.Text = dgvSV.Rows[dong].Cells[6].Value.ToString();
+                cbMaLop.SelectedValue = dgvSV.Rows[dong].Cells[7].Value.ToString();
             }
         }
 
@@ -82,19 +84,20 @@ namespace WindowsForms
         {
              if (txtMSV.TextLength == 0 || dgvSV.SelectedRows.Count < 0)
             {
-                MessageBox.Show(" ban phai chon du lieu xoa ");
+                MessageBox.Show(" bạn phải chọn dữ liệu xóa ");
             }
             else
-                 if (DialogResult.Yes == MessageBox.Show(" ban co chac muon xoa sinh vien '" + txtTenSV.Text + "' voi ma '" + txtMSV.Text + "'hay k?", "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                 if (DialogResult.Yes == MessageBox.Show(" bạn có chắc muốn xóa sinh viên '" + txtTenSV.Text + "' với mã '" + txtMSV.Text + "'hay không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                  {
                      //try
                      //{
                      //int r = dgvSV.CurrentCell.RowIndex;
                      //string strMaSV = dgvSV.Rows[r].Cells[0].Value.ToString();
-                     string strMaSV = dgvSV.SelectedRows[0].Cells[0].Value.ToString();
+                   //  string strMaSV = dgvSV.SelectedRows[0].Cells[0].Value.ToString();
+                     string strMaSV = txtMSV.Text;
                      sv.DeleteSV(strMaSV);
                      Form1_Load(sender, e);
-                     MessageBox.Show("Xoa sinh vien co ten la :  " + this.txtTenSV.Text + " thanh cong");
+                     MessageBox.Show("Xóa sinh viên có tên là :  " + this.txtTenSV.Text + " thành công");
                      
                  }
         }
@@ -118,7 +121,7 @@ namespace WindowsForms
                 {
                     if (txtSDT.TextLength == 0 || txtMSV.TextLength == 0 || txtTenSV.TextLength == 0)
                     {
-                        MessageBox.Show(" ban phai nhap day du thong tin");
+                        MessageBox.Show(" bạn phải nhập đầy đủ thông tin");
                         return;
                     }
                     int Num;
@@ -133,14 +136,14 @@ namespace WindowsForms
                     else
                     {
                         sv.InsertSV(txtMSV.Text, txtTenSV.Text, cbGioiTinh.SelectedItem.ToString(),
-                                    Int32.Parse(txtSDT.Text), dateTimePickerNgaySinh.Value, cbMaLop.SelectedValue.ToString());
-                        MessageBox.Show(" them sinh vien " + txtTenSV.Text + " co ma " + txtMSV.Text + " !!! thanh cong  ");
+                                    Int32.Parse(txtSDT.Text),txtDiaChi.Text ,txtEmail.Text ,  dateTimePickerNgaySinh.Value, cbMaLop.SelectedValue.ToString());
+                        MessageBox.Show(" thêm sinh viên " + txtTenSV.Text + " có mã " + txtMSV.Text + " !!! thành công  ");
                         loadData();
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("da ton tai ma sinh vien " + txtMSV.Text + " nay !!! Hay nhap ma moi ");
+                    MessageBox.Show("đã tồn tại mã sinh viên " + txtMSV.Text + " này !!! Hãy nhập mã mới ");
                     txtMSV.ResetText();
                     txtMSV.Focus();
                     return;
@@ -153,7 +156,7 @@ namespace WindowsForms
             {
                 if (txtSDT.TextLength == 0 || txtMSV.TextLength == 0 || txtTenSV.TextLength == 0)
                 {
-                    MessageBox.Show(" ban phai nhap day du thong tin");
+                    MessageBox.Show(" bạn phải nhập đầy đủ thông tin");
                     return;
                 }
                 int Num;
@@ -170,14 +173,14 @@ namespace WindowsForms
                     int r = dgvSV.CurrentCell.RowIndex;
                     string madk = dgvSV.Rows[r].Cells[0].Value.ToString();
                     sv.UpdateSV(madk, txtMSV.Text, txtTenSV.Text, cbGioiTinh.SelectedItem.ToString(),
-                                Int32.Parse(txtSDT.Text), dateTimePickerNgaySinh.Value, cbMaLop.SelectedValue.ToString());
-                     MessageBox.Show(" sua thong tin sinh vien " + txtTenSV.Text + " co ma " + txtMSV.Text + " !!! thanh cong  ");
+                                Int32.Parse(txtSDT.Text),txtDiaChi.Text ,txtEmail.Text , dateTimePickerNgaySinh.Value, cbMaLop.SelectedValue.ToString());
+                     MessageBox.Show(" sửa thông tin sinh viên " + txtTenSV.Text + " có mã " + txtMSV.Text + " !!! thành công  ");
                     loadData();
                 }
             }
             catch (Exception ex) 
             {
-                MessageBox.Show("da ton tai ma sinh vien " + txtMSV.Text + " nay !!! Hay nhap ma moi ");
+                MessageBox.Show("đã tồn tại mã sinh viên " + txtMSV.Text + " này !!! Hãy nhập mã mới ");
                 txtMSV.ResetText();
                 txtMSV.Focus();
                 return;
@@ -201,21 +204,21 @@ namespace WindowsForms
         {
             if (txtSearch.TextLength == 0)
                     {
-                        MessageBox.Show(" ban phai nhap ky tu tim kiem");
+                        MessageBox.Show(" bạn phải nhập kí tự tìm kiếm");
                         return;
                     }
             string key = txtSearch.Text.ToString().Trim();
             try 
             {
 
-                if (cbSearch.SelectedItem.ToString() == "Ma Lop")
+                if (cbSearch.SelectedItem.ToString() == "Mã Lớp")
                 {
                     
                         dgvSV.DataSource = sv.GetSVByIdMaLop(key);
                         if (dgvSV.Rows.Count == 0)
                         {
                             this.lbTg.ForeColor = Color.Red;
-                            this.lbTg.Text = " khong tim thay";
+                            this.lbTg.Text = " không tìm thấy";
                             txtMSV.Text = "";
                             txtTenSV.Text = "";
                             txtSDT.Text = "";
@@ -223,19 +226,19 @@ namespace WindowsForms
                         else
                         {
                             this.lbTg.ForeColor = Color.Black;
-                            this.lbTg.Text = " Co tong so : " + dgvSV.Rows.Count.ToString() + " Sinh Vien ";
+                            this.lbTg.Text = " Có tổng số : " + dgvSV.Rows.Count.ToString() + " Sinh Viên ";
                         }
                     }
                 
                 else
-                    if (cbSearch.SelectedItem.ToString() == "Ten Lop")
+                    if (cbSearch.SelectedItem.ToString() == "Tên Lớp")
                     {
                         dgvSV.DataSource = sv.GetSVByIdTenLop(key);
 
                         if (dgvSV.Rows.Count == 0)
                         {
                             this.lbTg.ForeColor = Color.Red;
-                            this.lbTg.Text = " khong tim thay";
+                            this.lbTg.Text = " không tìm thấy";
                             txtMSV.Text = "";
                             txtTenSV.Text = "";
                             txtSDT.Text = "";
@@ -243,12 +246,12 @@ namespace WindowsForms
                         else
                         {
                             this.lbTg.ForeColor = Color.Black;
-                            this.lbTg.Text = " Co tong so : " + dgvSV.Rows.Count.ToString() + " Sinh Vien ";
+                            this.lbTg.Text = " Có tổng số : " + dgvSV.Rows.Count.ToString() + " Sinh Viên ";
                         }
                     }
             }
             catch (Exception ex)
-            { MessageBox.Show(" ban phai chon kieu tim kiem"); }
+            { MessageBox.Show(" bạn phải chọn kiểu tìm kiếm"); }
            
         }
 
@@ -256,14 +259,19 @@ namespace WindowsForms
         {
 
             string key = txtSearch.Text.ToString().Trim();
-            try 
-            { if (cbSearch.SelectedItem.ToString() == "Ma Lop")
+            try
+            {
+                if (cbSearch.SelectedItem.ToString() == "")
+                {
+                    loadData();
+                }
+                if (cbSearch.SelectedItem.ToString() == "Mã Lớp")
                 {
                 dgvSV.DataSource = sv.GetSVByIdMaLop(key);
                 if (dgvSV.Rows.Count == 0)
                 {
                     this.lbTg.ForeColor = Color.Red;
-                    this.lbTg.Text = " khong tim thay";
+                    this.lbTg.Text = " không tìm thấy";
                     txtMSV.Text = "";
                     txtTenSV.Text = "";
                     txtSDT.Text = "";
@@ -271,11 +279,11 @@ namespace WindowsForms
                 else
                 {
                     this.lbTg.ForeColor = Color.Black;
-                    this.lbTg.Text = " Co tong so : " + dgvSV.Rows.Count.ToString() + " Sinh Vien ";
+                    this.lbTg.Text = " Có tổng số : " + dgvSV.Rows.Count.ToString() + " Sinh Viên ";
                 }
             }
             else
-                if (cbSearch.SelectedItem.ToString() == "Ten Lop")
+                if (cbSearch.SelectedItem.ToString() == "Tên Lớp")
                 {
                     dgvSV.DataSource = sv.GetSVByIdTenLop(key);
 
@@ -290,13 +298,13 @@ namespace WindowsForms
                     else
                     {
                         this.lbTg.ForeColor = Color.Black;
-                        this.lbTg.Text = " Co tong so : " + dgvSV.Rows.Count.ToString() + " Sinh Vien ";
+                        this.lbTg.Text = " Có tổng số : " + dgvSV.Rows.Count.ToString() + " Sinh Viên ";
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(" ban phai chon kieu tim kiem");
+                //MessageBox.Show(" ban phai chon kieu tim kiem");
             }
 
         } 

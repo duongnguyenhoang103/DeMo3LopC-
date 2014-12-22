@@ -28,28 +28,90 @@ namespace BusinessEntity
           da.ExcuteNonQuery(sql);
       }
 
-      public void InsertLop(string malop, string tenlop)
+      public void InsertLop(string maLop, string tenLop, int soSV, string maNghanh, string khoaHoc)
       {
-          string sql = " insert into tbl_LOP Values(N'" +malop+ "',N'" +tenlop+ "')";
+          string sql = " insert into tbl_LOP Values(N'" +maLop+ "',N'" +tenLop+ "', '"+soSV+"','"+maNghanh +"', '"+khoaHoc +"')";
           da.ExcuteNonQuery(sql);
           // them  N phong truong hop la unicode
       }
    
-      public void UpdateLop(string madk, string maLop, string tenLop)
+      public void UpdateLop(string madk, string maLop, string tenLop, int soSV, string maNghanh, string khoaHoc)
       {
-          ////string sql = "update tbl_LOP set MaLop = N'" + malop + "', TenLop = N'" + tenlop + "' WHERE MaLop = N'" + malopdk + "'";
-          ////da.ExcuteNonQuery(sql);
+          string sql = "update tbl_LOP set MaLop = N'" + maLop + "', TenLop = N'" + tenLop + "',SoSV = '"+soSV +"', MaNghanh='"+maNghanh +"', KhoaHoc = '"+khoaHoc +"' WHERE MaLop = N'" + madk + "' ";
+          da.ExcuteNonQuery(sql);
 
-          string sql = " update tbl_LOP set MaLop = '" + maLop + "' , TenLop = '" + tenLop + "' where MaLop ='" + madk + "'";
-            da.ExcuteNonQuery(sql);
+         
       
 
       }
 
-      public DataTable SearchLopBy(string keywork)
+      public DataTable SearchLopByIdMaL(string keywork)
       {
           //string sql = "select * from tbl_LOP WHERE MaLop like N'%"+keywork+"%' or TenLop like N'%"+keywork+"%' "; 
           string sql = "select * from tbl_LOP WHERE MaLop like N'%"+keywork+"%' "; 
+          DataTable dt = new DataTable();
+          dt = da.GetTable(sql);
+          return dt;
+      }
+
+      public DataTable SearchLopByNameMaL(string keywork)
+      {
+          
+          string sql = "select * from tbl_LOP WHERE TenLop like N'%" + keywork + "%' ";
+          DataTable dt = new DataTable();
+          dt = da.GetTable(sql);
+          return dt;
+      }
+
+      public DataTable SearchLopByIdNghanh(string keywork)
+      {
+
+          string sql = "select distinct l.MaLop, l.TenLop,l.SoSV,l.MaNghanh,l.KhoaHoc from tbl_LOP l, tbl_NGHANH n WHERE l.MaNghanh= n.MaNghanh and l.MaNghanh like N'%" + keywork + "%' ";
+          DataTable dt = new DataTable();
+          dt = da.GetTable(sql);
+          return dt;
+      }
+    
+      public DataTable SearchLopByNameNghanh(string keywork)
+      {
+
+          string sql = "select distinct l.MaLop, l.TenLop,l.SoSV,l.MaNghanh,l.KhoaHoc from tbl_LOP l, tbl_NGHANH n WHERE l.MaNghanh= n.MaNghanh and n.TenNghanh like N'%" + keywork + "%' ";
+          DataTable dt = new DataTable();
+          dt = da.GetTable(sql);
+          return dt;
+      }
+
+      public DataTable SearchLopByMaL(string keywork)
+      {
+          
+          string sql = "select * from tbl_LOP WHERE MaLop = N'" + keywork + "' ";
+          DataTable dt = new DataTable();
+          dt = da.GetTable(sql);
+          return dt;
+      }
+
+      public DataTable SearchLopByTenL(string keywork)
+      {
+
+          string sql = "select * from tbl_LOP WHERE TenLop = N'" + keywork + "' ";
+          DataTable dt = new DataTable();
+          dt = da.GetTable(sql);
+          return dt;
+      }
+
+      public DataTable SearchLopByMaNghanh(string keywork)
+      {
+
+          string sql = "select distinct l.MaLop, l.TenLop,l.SoSV,l.MaNghanh,l.KhoaHoc from tbl_LOP l, tbl_NGHANH n WHERE l.MaNghanh= n.MaNghanh and l.MaNghanh = N'" + keywork + "' ";
+          DataTable dt = new DataTable();
+          dt = da.GetTable(sql);
+          return dt;
+      }
+
+      public DataTable SearchLopByTenNghanh(string keywork)
+      {
+
+          string sql = "select distinct l.MaLop, l.TenLop,l.SoSV,l.MaNghanh,l.KhoaHoc from tbl_LOP l, tbl_NGHANH n WHERE l.MaNghanh= n.MaNghanh and n.TenNghanh = N'" + keywork + "' ";
           DataTable dt = new DataTable();
           dt = da.GetTable(sql);
           return dt;

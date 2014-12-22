@@ -18,6 +18,7 @@ namespace WindowsForms
             InitializeComponent();
         }
         LopBE lp = new LopBE();
+        NghanhBE nghanh = new NghanhBE();
         
         public void loadData()
         {
@@ -25,14 +26,21 @@ namespace WindowsForms
             //dt = lp.ShowLop();
             //dgvLop.DataSource = dt;
             dgvLop.DataSource = lp.ShowLop();
-            // sap xep 1 DataView tren DataTable
+            // sap xep 1 DataView tren DataTable           
+            this.lbTong.Text = " Có tổng số : " + dgvLop.Rows.Count.ToString() + " lớp ";
+        }
+        public void loadCombox()
+        {
+            // load combox MaLop 
+            cbMaNghanh.DataSource = nghanh.ShowNghanh();
+            cbMaNghanh.DisplayMember = "MaNghanh";
+            cbMaNghanh.ValueMember = "MaNghanh";
 
-           
-            this.lbTong.Text = " Co tong so : " + dgvLop.Rows.Count.ToString() + " lop ";
+
         }
         private void frmLop_Load(object sender, EventArgs e)
         {
-           
+            loadCombox();
             loadData();
             
         }
@@ -56,6 +64,9 @@ namespace WindowsForms
             int dong = e.RowIndex;
             this.txtMaLop.Text = dgvLop.Rows[dong].Cells["MaLop"].Value.ToString();
             this.txTenLp.Text = dgvLop.Rows[dong].Cells["TenLop"].Value.ToString();
+            this.txtSoSV.Text = dgvLop.Rows[dong].Cells["SoSV"].Value.ToString();
+            this.cbMaNghanh.SelectedValue = dgvLop.Rows[dong].Cells["MaNghanh"].Value.ToString();
+            this.txtKhoaHoc.Text  = dgvLop.Rows[dong].Cells["KhoaHoc"].Value.ToString();
         }
 
        
@@ -78,15 +89,16 @@ namespace WindowsForms
             {
                 try
                 {
-                    lp.InsertLop(this.txtMaLop.Text.Trim(), this.txTenLp.Text.Trim());
-                    MessageBox.Show("Them ma lop " + this.txtMaLop.Text + " thanh cong");
+                    lp.InsertLop(this.txtMaLop.Text.Trim(), this.txTenLp.Text.Trim(),Int32.Parse(txtSoSV.Text),cbMaNghanh.SelectedValue.ToString(),txtKhoaHoc.Text    );
+                    MessageBox.Show("Thêm mã lớp " + this.txtMaLop.Text + " thành công");
                     frmLop_Load(sender, e);
                 }
                 catch
                 {
-                    MessageBox.Show("Them ma lop " + this.txtMaLop.Text + " khong thanh cong vi da ton tai");
+                    MessageBox.Show("Thêm mã lớp " + this.txtMaLop.Text + " không thành công vì đã tồn tại");
+                    txtMaLop.Focus();
                     txtMaLop.Text = "";
-                    txTenLp.Text = "";
+                    
                 }
             }                     
         }
@@ -114,7 +126,7 @@ namespace WindowsForms
                     {
                         int r = dgvLop.CurrentCell.RowIndex;
                         string strmadk = dgvLop.Rows[r].Cells["MaLop"].Value.ToString();
-                        lp.UpdateLop(strmadk, txtMaLop.Text, this.txTenLp.Text);
+                        lp.UpdateLop(strmadk, this.txtMaLop.Text.Trim(), this.txTenLp.Text.Trim(), Int32.Parse(txtSoSV.Text), cbMaNghanh.SelectedValue.ToString(), txtKhoaHoc.Text);
                         MessageBox.Show(" ban da sua Thanh cong");
                         frmLop_Load(sender, e);
                     }
@@ -165,16 +177,16 @@ namespace WindowsForms
             //}
             
             string key =txtSearch.Text.Trim();
-            dgvLop.DataSource = lp.SearchLopBy(key);
+            dgvLop.DataSource = lp.SearchLopByIdMaL(key);
             if (dgvLop.Rows.Count == 0)
             {
                 this.lbTong.ForeColor = Color.Red;
-                this.lbTong.Text = " khong tim thay";
+                this.lbTong.Text = " không tìm thấy";
             }
             else
             {
                 this.lbTong.ForeColor = Color.BlueViolet;
-                this.lbTong.Text = " Co tong so : " + dgvLop.Rows.Count.ToString()+ " lop ";
+                this.lbTong.Text = " Có tổng số : " + dgvLop.Rows.Count.ToString() + " lớp ";
             }
         }
 

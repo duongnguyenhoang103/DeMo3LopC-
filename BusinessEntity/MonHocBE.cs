@@ -22,26 +22,26 @@ namespace BusinessEntity
 
         public void DeleteMH(string maMH)
         {
-            string sql = "delete from tbl_MONHOC where MaMH = '"+maMH+"'";
+            string sql = "delete from tbl_MONHOC where MaMH = '" + maMH + "'";
             da.ExcuteNonQuery(sql);
         }
 
-        public void InsertMH(string maMH,string tenMH, string maGV)
-    {
-        string sql = " insert into tbl_MONHOC values ('" + maMH+ "', '" + tenMH + "','" + maGV + "' )";
-        da.ExcuteNonQuery(sql);
-    }
-
-        public void Update(string madk, string maMH, string tenMH ,string maGV)
+        public void InsertMH(string maMH, string tenMH, int soTC, int soT, string maGV)
         {
-            string sql = " update tbl_MONHOC set MaMH = '"+maMH+"' , TenMH = '"+tenMH+"',MaGV ='"+maGV+"' where MaMH ='"+madk+"'";
+            string sql = " insert into tbl_MONHOC values ('" + maMH + "', N'" + tenMH + "','" + soTC + "','" + soT + "','" + maGV + "' )";
+            da.ExcuteNonQuery(sql);
+        }
+
+        public void UpdateMH(string madk, string maMH, string tenMH, int soTC, int soT, string maGV)
+        {
+            string sql = " update tbl_MONHOC set MaMH = '" + maMH + "' , TenMH = N'" + tenMH + "',SoTinChi= '" + soTC + "', SoTiet= '" + soT + "',MaGV ='" + maGV + "' where MaMH ='" + madk + "'";
             da.ExcuteNonQuery(sql);
         }
 
         public DataTable SearchByID(string key)
         {
-         
-            string sql = "select * from tbl_MONHOC where MaMH like N'%"+key+"%'";
+
+            string sql = "select * from tbl_MONHOC where MaMH like N'%" + key + "%'";
             DataTable dt = new DataTable();
             dt = da.GetTable(sql);
             return dt;
@@ -55,14 +55,21 @@ namespace BusinessEntity
             return dt;
         }
 
-         public DataTable SearchMonHocByIdGV(string key)
+        public DataTable SearchMonHocByIdGV(string key)
         {
-            string sql = " select mh.MaMH,mh.TenMH ,mh.MaGV from tbl_MONHOC mh ,tbl_GIAOVIEN gv "
-                         + "Where mh.MaGV = gv.MaGV and mh.MaGV like '%"+key+"%' " ;
+            string sql = " select mh.MaMH,mh.TenMH ,mh.SoTinChi, mh.SoTiet,mh.MaGV from tbl_MONHOC mh ,tbl_GIAOVIEN gv "
+                         + "Where mh.MaGV = gv.MaGV and mh.MaGV like '%" + key + "%' ";
             DataTable dt = new DataTable();
             dt = da.GetTable(sql);
             return dt;
         }
-    
+        public DataTable SearchMonHocByAll(string key)
+        {
+            string sql = " select distinct mh.MaMH,mh.TenMH ,mh.SoTinChi, mh.SoTiet,mh.MaGV from tbl_MONHOC mh ,tbl_GIAOVIEN gv "
+                         + "Where mh.MaGV = gv.MaGV and mh.TenMH like '%" + key + "%' or mh.MaMH like '%" + key + "%' or gv.MaGV like '%" + key + "%' or mh.SoTinChi like '%" + key + "%' or mh.SoTiet like '%" + key + "%' ";
+            DataTable dt = new DataTable();
+            dt = da.GetTable(sql);
+            return dt;
+        }
     }
 }

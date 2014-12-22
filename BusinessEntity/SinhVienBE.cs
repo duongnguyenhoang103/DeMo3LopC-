@@ -12,13 +12,13 @@ namespace BusinessEntity
     {
        DataConnect da = new DataConnect();
 
-       public string MaSV { get;set;}
-       public string TenSV { get; set; }
-       public string GioiTinh { get; set; }
-       public int SDT { get; set; }
-       public DateTime NgaySinh  { get; set; }
+       //public string MaSV { get;set;}
+       //public string TenSV { get; set; }
+       //public string GioiTinh { get; set; }
+       //public int SDT { get; set; }
+       //public DateTime NgaySinh  { get; set; }
 
-       public string MaLop { get; set; }
+       //public string MaLop { get; set; }
 
 
        public DataTable GetAllSV()
@@ -34,28 +34,25 @@ namespace BusinessEntity
            string sql = "delete tbl_SINHVIEN where MaSV = '" + maSV + "' ";
            da.ExcuteNonQuery(sql);
        }
-       public void InsertSV(string masv, string tensv, string gioitinh, int sdt, DateTime ngaysinh, string malop)
+       public void InsertSV(string masv, string tensv, string gioitinh, int sdt, string diaChi, string email, DateTime ngaysinh, string malop)
        {
-           string sql = " INSERT INTO tbl_SINHVIEN VALUES ('" + masv + "', '" + tensv + "',N'" + gioitinh + "','" + sdt + "','" + ngaysinh + "','" + malop + "') ";
-
-           //string sql = " insert tbl_SINHVIEN values ('" + masv + "', '" + tensv + "','" + gioitinh + "','" + sdt + "', '" + ngaysinh.ToShortDateString() + "', '" + malop + "',)";
+           string sql = " INSERT INTO tbl_SINHVIEN VALUES ('" + masv + "', '" + tensv + "',N'" + gioitinh + "','" + sdt + "', '"+diaChi +"', '"+email+"' ,'" + ngaysinh + "','" + malop + "') ";           
            da.ExcuteNonQuery(sql);
        }
 
 
 
-       public void UpdateSV(string madk,string masv, string tensv, string gioitinh, int sdt, DateTime ngaysinh, string malop)
+       public void UpdateSV(string madk , string masv, string tensv, string gioitinh, int sdt, string diaChi, string email, DateTime ngaysinh, string malop)
        {
-           string sql = " Update tbl_SINHVIEN SET MaSV ='"+masv+"', TenSV ='"+tensv+"', GioiTinh= N'"+gioitinh+"', SDT='"+sdt +"', NgaySinh='"+ngaysinh +"', MaLop ='"+malop+"' WHERE MaSV ='"+madk+"' ";
+           string sql = " Update tbl_SINHVIEN SET MaSV ='"+masv+"', TenSV =N'"+tensv+"', GioiTinh= N'"+gioitinh+"', SDT='"+sdt +"', DiaChi= N'"+diaChi+"', Email='"+email +"', NgaySinh='"+ngaysinh +"', MaLop ='"+malop+"' WHERE MaSV ='"+madk+"' ";
            da.ExcuteNonQuery(sql);
        }
 
        public DataTable GetSVByIdMaLop (string key)
        {
-           
-           string sql = " select Distinct sv.MaSV,sv.TenSV,sv.GioiTinh,sv.SDT,sv.NgaySinh,sv.MaLop from tbl_SINHVIEN  sv ,tbl_LOP lp "
-                           + " Where sv.MaLop = lp.MaLop and sv.MaLop like N'%"+key+"%' ";
 
+           string sql = " select Distinct sv.MaSV,sv.TenSV,sv.GioiTinh,sv.SDT, sv.DiaChi, sv.Email ,sv.NgaySinh,sv.MaLop from tbl_SINHVIEN  sv ,tbl_LOP lp "
+                           + " Where sv.MaLop = lp.MaLop and sv.MaLop like N'%" + key + "%'  ";
            DataTable dt = new DataTable();
            dt = da.GetTable(sql);
            return dt;
@@ -63,11 +60,39 @@ namespace BusinessEntity
 
        public DataTable GetSVByIdTenLop(string key)
        {
-          string sql = " select Distinct sv.MaSV,sv.TenSV,sv.GioiTinh,sv.SDT,sv.NgaySinh,sv.MaLop from tbl_SINHVIEN  sv ,tbl_LOP lp "
+          string sql = " select Distinct sv.MaSV,sv.TenSV,sv.GioiTinh,sv.SDT,sv.DiaChi, sv.Email ,sv.NgaySinh,sv.MaLop from tbl_SINHVIEN  sv ,tbl_LOP lp "
                            + " Where sv.MaLop = lp.MaLop and lp.TenLop like N'%"+key+"%' ";
            DataTable dt = new DataTable();
            dt = da.GetTable(sql);
            return dt;
        }
+       public DataTable GetSVByIdMaSv(string key)
+       {
+
+           string sql = " select Distinct sv.MaSV,sv.TenSV,sv.GioiTinh,sv.SDT, sv.DiaChi, sv.Email ,sv.NgaySinh,sv.MaLop from tbl_SINHVIEN  sv ,tbl_LOP lp "
+                           + " Where sv.MaLop = lp.MaLop and sv.MaSV like N'%" + key + "%'  ";
+           DataTable dt = new DataTable();
+           dt = da.GetTable(sql);
+           return dt;
+       }
+       public DataTable GetSVByName(string key)
+       {
+
+           string sql = " select Distinct sv.MaSV,sv.TenSV,sv.GioiTinh,sv.SDT, sv.DiaChi, sv.Email ,sv.NgaySinh,sv.MaLop from tbl_SINHVIEN  sv ,tbl_LOP lp "
+                           + " Where sv.MaLop = lp.MaLop and sv.TenSV like N'%" + key + "%'  ";
+           DataTable dt = new DataTable();
+           dt = da.GetTable(sql);
+           return dt;
+       }
+       public DataTable GetSVByMaLopId(string key)
+       {
+
+           string sql = " select Distinct sv.MaSV,sv.TenSV,sv.GioiTinh,sv.SDT, sv.DiaChi, sv.Email ,sv.NgaySinh,sv.MaLop from tbl_SINHVIEN  sv ,tbl_LOP lp "
+                           + " Where sv.MaLop = lp.MaLop and sv.MaLop = N'" + key + "'  ";
+           DataTable dt = new DataTable();
+           dt = da.GetTable(sql);
+           return dt;
+       }
+
     }
 }

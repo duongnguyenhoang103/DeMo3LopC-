@@ -45,7 +45,6 @@ namespace AccessData
         public bool CheckRead(string sql)
         {
             bool result = false;
-
             SqlConnection con = getConnect();
             con.Open();
             SqlCommand command = new SqlCommand(sql,con );
